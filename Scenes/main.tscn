@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://djdmwb7wvtwo4"]
+
+[ext_resource type="Script" uid="uid://0p88efr72r8m" path="res://Scripts/player.gd" id="1_jjgbg"]
+[ext_resource type="Texture2D" uid="uid://bkjvgproe4q4s" path="res://Assets/Characters/Adam_idle_16x16.png" id="2_bo1nx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ql73s"]
+size = Vector2(32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v0s4m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bo1nx")
+}],
+"loop": 1,
+"name": &"Idle Ambatukam",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Main" type="Node2D" unique_id=769764529]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1012266510]
+script = ExtResource("1_jjgbg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1031921579]
+shape = SubResource("RectangleShape2D_ql73s")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Player" unique_id=1471895229]
+sprite_frames = SubResource("SpriteFrames_v0s4m")
+animation = &"Idle Ambatukam"
